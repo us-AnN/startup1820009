@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.startup1820009.R
+import android.content.Intent
+import android.view.View
+import com.example.startup1820009.util.Pref
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var nameTextView: TextView
@@ -23,5 +26,13 @@ class ProfileActivity : AppCompatActivity() {
         // Menampilkan data profil pada tampilan
         nameTextView.text = name
         bioTextView.text = bio
+    }
+    fun logout(view: View) {
+        val pref = Pref(this)
+        pref.setIsLogin(false)
+
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

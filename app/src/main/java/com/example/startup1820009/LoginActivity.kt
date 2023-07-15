@@ -7,8 +7,11 @@ package com.example.startup1820009
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import com.example.startup1820009.ui.dashboard.DashboardFragment
+import com.example.startup1820009.ui.home.HomeFragment
 import com.example.startup1820009.util.Pref
 
 class LoginActivity : AppCompatActivity() {
@@ -57,5 +60,11 @@ class LoginActivity : AppCompatActivity() {
         }
 
         return false
+    }
+    fun batal(view: View) {
+
+        val intent = Intent(this,DashboardFragment::class.java)
+        startActivity(intent)
+        finish()
     }
     }
